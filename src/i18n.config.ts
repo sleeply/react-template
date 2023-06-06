@@ -2,6 +2,8 @@ import { initReactI18next } from "react-i18next";
 import i18n from "i18next";
 import { SUPPORT_LOCALES } from "./utils/constants";
 
+const DEFAULT_LOCALE: string = "en";
+
 const loadJson = (languageKey: string): Promise<any> => {
   return new Promise((res, rej) => {
     import(`./locales/${languageKey}.json`).then((data) => {
@@ -25,6 +27,7 @@ i18n.use(initReactI18next).init({
   debug: true,
   resources,
   fallbackLng: "en",
+  lng: DEFAULT_LOCALE,
   react: {
     useSuspense: true,
   },
