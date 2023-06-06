@@ -11,6 +11,7 @@ const loadJson = (languageKey: string): Promise<any> => {
 };
 
 let resources = {};
+
 for (const lang of SUPPORT_LOCALES) {
   resources = {
     ...resources,
